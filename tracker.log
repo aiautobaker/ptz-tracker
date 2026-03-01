@@ -1,0 +1,1504 @@
+2026-03-01 11:45:19,051  INFO      ─── PTZ Tracker starting ───
+2026-03-01 11:45:19,051  INFO      Log file: /Users/freedommedia/ptz-tracker/tracker.log
+2026-03-01 11:45:19,051  INFO      Loading YOLO model...
+2026-03-01 11:45:19,070  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 11:45:20,071  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 11:45:20,362  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:20,389  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:22,716  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:22,752  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:25,042  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:25,061  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:25,248  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:25,292  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:25,423  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:25,451  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:25,649  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:25,661  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:25,860  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:25,893  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:26,180  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:26,210  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:26,405  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:26,426  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:26,835  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:26,855  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:28,496  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:28,517  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:29,574  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:29,593  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:30,535  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:30,570  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:30,651  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:30,672  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:30,752  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:30,778  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:38,593  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:38,642  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:38,727  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:38,745  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:39,276  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:39,338  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:40,435  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:40,452  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:41,172  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:41,190  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:41,366  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:41,408  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:42,137  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:42,175  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:43,791  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:43,822  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:47,438  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:47,485  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:47,936  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:47,957  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:48,533  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:48,554  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:48,737  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:48,761  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:49,101  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:49,124  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:49,631  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:49,661  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:49,934  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:49,961  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:50,337  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:50,392  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:50,851  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:50,874  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:52,330  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:52,372  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:54,671  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:54,700  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:55,152  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:55,209  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:55,302  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:55,352  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:45:56,054  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:56,081  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:45:56,178  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:45:56,189  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:01,729  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:01,743  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:01,925  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:01,952  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:04,620  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:04,670  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:05,914  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:05,940  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:07,414  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:07,450  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:07,917  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:07,943  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:08,341  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:08,354  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:08,421  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:08,456  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:08,523  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:08,556  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:08,622  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:08,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:08,816  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:08,843  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:09,414  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:09,440  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:09,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:09,648  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:10,118  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:10,156  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:11,116  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:11,146  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:11,418  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:11,457  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:12,015  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:12,042  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:13,513  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:13,549  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:15,314  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:15,343  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:16,019  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,090  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:16,180  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,217  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:16,294  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,340  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:16,570  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,602  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:16,756  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,791  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:16,874  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:16,889  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:17,342  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:17,371  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:17,446  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:17,460  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:17,541  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:17,597  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:19,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:19,042  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:20,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:20,653  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:20,722  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:20,750  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:20,919  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:20,961  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:21,120  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:21,170  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:21,341  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:21,392  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:21,622  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:21,654  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:22,432  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:22,474  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:23,012  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:23,042  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:23,440  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:23,458  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:23,554  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:23,588  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:24,917  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:24,961  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:25,640  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:25,677  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:25,915  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:25,974  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:26,720  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:26,759  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:27,848  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:27,875  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:29,517  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:29,549  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:31,118  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:31,152  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:31,224  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:31,253  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:31,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:31,448  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:31,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:31,749  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:31,919  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:31,944  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:32,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:32,048  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:32,519  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:32,543  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:33,116  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:33,154  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:46:36,393  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:36,461  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:37,254  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:37,278  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:38,814  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:38,839  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:46:39,414  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:46:39,440  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:18,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:18,641  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:19,245  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:19,261  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:20,224  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:20,257  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:20,720  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:20,751  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:21,221  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:21,249  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:21,515  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:21,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:21,915  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:21,943  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:23,280  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:23,320  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:30,116  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:30,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:30,619  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:30,650  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:30,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:30,844  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:47,615  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:47,640  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:48,316  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:48,339  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:47:54,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:54,442  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:47:54,615  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:47:54,650  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:48:22,039  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:22,082  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:22,166  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:22,207  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:22,623  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:22,657  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:23,119  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:23,158  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:48:31,113  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:31,172  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:31,416  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:31,445  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:48:45,830  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:45,852  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:46,335  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:46,355  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:48:52,815  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:52,856  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:52,923  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:52,955  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:48:57,834  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:57,857  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:48:58,637  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:48:58,656  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:49:39,144  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:49:39,200  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:49:41,429  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:49:41,453  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:49:41,542  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:49:41,557  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:49:41,927  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:49:41,958  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:49:44,034  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:49:44,054  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:05,036  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:05,103  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:05,418  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:05,445  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:09,015  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:09,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:10,225  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:10,253  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:18,421  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:18,473  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:19,018  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:19,056  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:21,021  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:21,072  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:21,240  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:21,259  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:22,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:22,641  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:23,228  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:23,256  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:24,022  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:24,050  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:24,517  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:24,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:50:24,621  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:24,686  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:24,759  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:24,792  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:25,117  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:25,159  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:25,316  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:25,351  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:50:26,217  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:50:26,245  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:00,514  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:00,557  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:01,118  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:01,152  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:01,223  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:01,251  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:01,420  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:01,444  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:01,918  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:01,941  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:02,023  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:02,049  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:02,220  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:02,242  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:02,321  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:02,345  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:03,723  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:03,745  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:03,824  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:03,850  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:04,422  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:04,450  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:04,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:04,643  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:10,112  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:10,177  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:10,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:10,641  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:10,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:10,850  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:11,220  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:11,252  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:11,520  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:11,555  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:11,624  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:11,650  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:11,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:11,748  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:11,919  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:11,943  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:12,664  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:12,691  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:13,225  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:13,260  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:13,826  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:13,858  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:13,937  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:13,952  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:14,032  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:14,055  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:14,134  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:14,175  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:14,861  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:14,888  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:14,975  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:15,011  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:15,095  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:15,119  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:15,206  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:15,226  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:15,610  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:15,638  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:16,208  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:16,254  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:16,800  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:16,821  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:29,516  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:29,541  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:29,621  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:29,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:29,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:29,752  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:29,913  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:29,942  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:30,424  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:30,475  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:30,596  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:30,626  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:51:32,223  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:32,253  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:51:32,799  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:51:32,825  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:20,629  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:20,660  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:21,513  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:21,533  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:22,228  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:22,243  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:23,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:23,043  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:23,321  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:23,349  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:23,618  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:23,645  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:23,724  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:23,753  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:24,019  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,049  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:24,126  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,174  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:24,249  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,275  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:24,424  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,452  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:24,618  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:24,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:24,841  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:25,117  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:25,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:25,537  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:25,559  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:25,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:25,753  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:25,825  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:25,859  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:26,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:26,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:26,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:26,828  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:27,716  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:27,741  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:28,320  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:28,356  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:28,436  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:28,460  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:28,534  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:28,555  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:28,628  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:28,657  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:28,916  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:28,951  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:29,029  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:29,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:29,134  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:29,174  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:30,017  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:30,031  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:30,222  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:30,256  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:30,717  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:30,745  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:30,916  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:30,941  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:31,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:31,044  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:31,115  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:31,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:31,416  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:31,449  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:32,246  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:32,277  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:32,345  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:32,372  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:32,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:32,642  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:33,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:33,644  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:34,221  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:34,285  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:34,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:34,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:35,120  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:35,158  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:35,236  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:35,253  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:35,420  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:35,453  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:35,616  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:35,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:35,816  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:35,844  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:38,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:38,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:38,230  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:38,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:38,713  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:38,742  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:39,317  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:39,342  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:39,415  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:39,449  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:39,521  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:39,550  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:39,622  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:39,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:39,919  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:39,948  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:40,252  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:40,280  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:40,515  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:40,572  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:40,917  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:40,945  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:41,016  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:41,049  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:41,317  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:41,344  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:41,415  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:41,442  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:41,518  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:41,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:41,923  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:41,951  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:42,023  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:42,051  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:42,516  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:42,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:42,617  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:42,678  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:42,917  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:42,950  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:43,317  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:43,351  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:43,424  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:43,459  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:43,530  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:43,552  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:43,624  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:43,653  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:44,116  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:44,149  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:44,420  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:44,444  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:44,519  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:44,550  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:45,216  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:45,240  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:45,514  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:45,558  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:45,816  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:45,849  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:46,149  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:46,177  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:46,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:46,450  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:46,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:46,878  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:46,959  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:46,989  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:47,515  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:47,541  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:47,915  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:47,940  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:48,115  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:48,155  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:48,228  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:48,259  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:48,613  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:48,643  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:48,716  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:48,750  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:49,224  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:49,258  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:49,332  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:49,357  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:49,720  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:49,741  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:50,222  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:50,250  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:50,323  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:50,351  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:50,425  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:50,486  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:51,215  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:51,244  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:51,416  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:51,426  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:51,512  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:51,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:52,421  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:52,457  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:52,531  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:52,553  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:53,241  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:53,258  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:53,427  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:53,452  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:53,526  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:53,558  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:53,717  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:53,741  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,020  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,042  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,121  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,231  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,252  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,443  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,520  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,540  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:54,621  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:54,642  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:55,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:55,445  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:55,522  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:55,542  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:55,623  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:55,644  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,028  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,052  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,122  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,159  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,232  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,258  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,332  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,353  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,424  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,453  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,529  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,557  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,630  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,681  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:56,755  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:56,790  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:57,818  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:57,841  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:58,417  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:58,439  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:58,820  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:58,844  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:59,123  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:59,161  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:59,422  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:59,455  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:52:59,532  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:59,553  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:52:59,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:52:59,759  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:00,318  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:00,341  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:00,619  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:00,641  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:01,216  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:01,258  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:01,517  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:01,545  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:02,118  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:02,150  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:02,522  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:02,540  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:03,021  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:03,044  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:03,322  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:03,350  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:03,723  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:03,773  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:04,018  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:04,045  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:04,817  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:04,839  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:30,934  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:30,991  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:31,137  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:31,176  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:37,613  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:37,632  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:37,714  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:37,740  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:42,077  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:42,093  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:44,114  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:44,154  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:45,019  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:45,051  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:45,228  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:45,261  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:45,518  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:45,541  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:46,122  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:46,169  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:46,335  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:46,374  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:46,972  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:46,990  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:47,346  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:47,366  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:47,443  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:47,477  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:53:47,564  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:47,591  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:53:48,919  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:53:48,954  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:03,615  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:03,652  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:03,820  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:03,852  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:04,722  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:04,749  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:04,824  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:04,875  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:04,949  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:04,960  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:05,035  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:05,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:05,221  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:05,249  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:05,523  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:05,551  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:05,721  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:05,748  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:05,823  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:05,850  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:06,319  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:06,343  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:06,419  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:06,450  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:06,522  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:06,542  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:06,724  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:06,756  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:07,122  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,158  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:07,423  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,450  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:07,530  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,555  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:07,629  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,659  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:07,737  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,773  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:07,848  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:07,861  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:08,325  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:08,353  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:08,434  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:08,456  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:08,724  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:08,757  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:08,837  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:08,858  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:08,937  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:08,958  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:09,323  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:09,355  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:09,636  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:09,654  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:10,025  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:10,051  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:10,420  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:10,455  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:10,621  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:10,651  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:11,527  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:11,552  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:11,632  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:11,655  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:12,224  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:12,250  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:12,331  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:12,357  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:12,437  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:12,458  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:12,822  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:12,849  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:14,346  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:14,379  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:14,479  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:14,510  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:18,233  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:18,258  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:19,418  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:19,452  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:20,121  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:20,161  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:20,242  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:20,257  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:20,334  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:20,359  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:21,331  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:21,401  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:22,127  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:22,170  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:23,624  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:23,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:27,347  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:27,359  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:27,729  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:27,762  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:27,925  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:27,951  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:28,822  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:28,850  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:29,027  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:29,059  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:30,392  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:30,457  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:30,828  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:30,852  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:30,948  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:30,962  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:31,635  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:31,659  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:32,154  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:32,190  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 11:54:32,624  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:32,649  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:54:32,659  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:54:32,691  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:41,478  INFO      ─── PTZ Tracker starting ───
+2026-03-01 11:55:41,479  INFO      Log file: /Users/freedommedia/ptz-tracker/tracker.log
+2026-03-01 11:55:41,479  INFO      Loading YOLO model...
+2026-03-01 11:55:41,512  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 11:55:42,538  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 11:55:42,892  DEBUG     Direction change: None → upright
+2026-03-01 11:55:42,894  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:42,929  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightup&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:44,183  DEBUG     Direction change: upright → right
+2026-03-01 11:55:44,184  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:44,219  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:44,560  DEBUG     Direction change: right → stop
+2026-03-01 11:55:44,561  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:44,590  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:49,882  DEBUG     Direction change: stop → down
+2026-03-01 11:55:49,883  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:49,922  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:49,990  DEBUG     Direction change: down → stop
+2026-03-01 11:55:49,990  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:50,021  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:53,458  DEBUG     Direction change: stop → left
+2026-03-01 11:55:53,459  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:53,493  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:53,574  DEBUG     Direction change: left → stop
+2026-03-01 11:55:53,575  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:53,605  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:54,541  DEBUG     Direction change: stop → left
+2026-03-01 11:55:54,542  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:54,601  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:54,706  DEBUG     Direction change: left → stop
+2026-03-01 11:55:54,707  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:54,759  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:54,945  DEBUG     Direction change: stop → left
+2026-03-01 11:55:54,947  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:54,975  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:55,066  DEBUG     Direction change: left → stop
+2026-03-01 11:55:55,067  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:55,102  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:55:55,549  DEBUG     Direction change: stop → left
+2026-03-01 11:55:55,550  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:55,591  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:55:55,680  DEBUG     Direction change: left → stop
+2026-03-01 11:55:55,681  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:55:55,721  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:56:14,066  INFO      Shutting down — stop command sent to camera
+2026-03-01 11:56:14,067  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:56:14,088  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:56:14,096  INFO      ─── PTZ Tracker stopped ───
+2026-03-01 11:58:03,973  INFO      ─── PTZ Tracker starting ───
+2026-03-01 11:58:03,973  INFO      Log file: /Users/freedommedia/ptz-tracker/tracker.log
+2026-03-01 11:58:03,973  INFO      Loading YOLO model...
+2026-03-01 11:58:03,993  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 11:58:05,022  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 11:58:05,299  DEBUG     Direction change: None → stop
+2026-03-01 11:58:05,300  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:05,324  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:58:11,860  DEBUG     Direction change: stop → left
+2026-03-01 11:58:11,861  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:11,908  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:58:12,351  DEBUG     Direction change: left → stop
+2026-03-01 11:58:12,352  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:12,361  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:58:18,043  DEBUG     Direction change: stop → right
+2026-03-01 11:58:18,044  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:18,078  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 11:58:18,347  DEBUG     Direction change: right → stop
+2026-03-01 11:58:18,347  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:18,373  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:58:19,447  DEBUG     Direction change: stop → left
+2026-03-01 11:58:19,447  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:19,488  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 11:58:22,337  INFO      Shutting down — stop command sent to camera
+2026-03-01 11:58:22,338  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 11:58:22,357  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 11:58:22,382  INFO      ─── PTZ Tracker stopped ───
+2026-03-01 12:01:28,758  INFO      ─── PTZ Tracker starting ───
+2026-03-01 12:01:28,758  INFO      Log file: /Users/freedommedia/ptz-tracker/tracker.log
+2026-03-01 12:01:28,758  INFO      Loading YOLO model...
+2026-03-01 12:01:28,774  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 12:01:29,794  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 12:01:30,099  DEBUG     Direction change: None → right
+2026-03-01 12:01:30,100  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:30,143  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:33,327  DEBUG     Direction change: right → stop
+2026-03-01 12:01:33,328  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:33,349  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:35,354  DEBUG     Direction change: stop → left
+2026-03-01 12:01:35,355  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:35,405  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:37,327  DEBUG     Framing → close-up  (box 47%)
+2026-03-01 12:01:37,327  DEBUG     Direction change: left → downleft
+2026-03-01 12:01:37,327  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:37,349  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:37,428  DEBUG     Direction change: downleft → down
+2026-03-01 12:01:37,429  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:37,443  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:37,928  DEBUG     Direction change: down → downright
+2026-03-01 12:01:37,929  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:37,947  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:38,025  DEBUG     Direction change: downright → right
+2026-03-01 12:01:38,026  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:38,052  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:38,729  DEBUG     Direction change: right → stop
+2026-03-01 12:01:38,729  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:38,742  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:39,128  DEBUG     Direction change: stop → right
+2026-03-01 12:01:39,129  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:39,147  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:40,627  DEBUG     Direction change: right → stop
+2026-03-01 12:01:40,628  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:40,643  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:41,127  DEBUG     Direction change: stop → up
+2026-03-01 12:01:41,128  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:41,148  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&up&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:41,427  DEBUG     Direction change: up → stop
+2026-03-01 12:01:41,428  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:41,447  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:41,526  DEBUG     Direction change: stop → upleft
+2026-03-01 12:01:41,527  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:41,553  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:41,625  DEBUG     Direction change: upleft → left
+2026-03-01 12:01:41,626  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:41,665  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:43,527  DEBUG     Direction change: left → stop
+2026-03-01 12:01:43,528  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:43,543  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:50,227  DEBUG     Direction change: stop → down
+2026-03-01 12:01:50,227  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:50,261  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:51,329  DEBUG     Direction change: down → stop
+2026-03-01 12:01:51,329  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:51,413  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:54,742  DEBUG     Direction change: stop → left
+2026-03-01 12:01:54,743  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:54,786  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:55,629  DEBUG     Direction change: left → stop
+2026-03-01 12:01:55,630  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:55,642  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:55,729  DEBUG     Direction change: stop → left
+2026-03-01 12:01:55,729  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:55,744  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:55,826  DEBUG     Direction change: left → stop
+2026-03-01 12:01:55,827  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:55,847  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:56,328  DEBUG     Direction change: stop → left
+2026-03-01 12:01:56,328  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:56,344  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:01:56,827  DEBUG     Direction change: left → stop
+2026-03-01 12:01:56,828  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:56,848  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:01:59,826  DEBUG     Direction change: stop → left
+2026-03-01 12:01:59,827  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:01:59,856  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:00,438  DEBUG     Direction change: left → stop
+2026-03-01 12:02:00,439  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:00,464  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:03,840  DEBUG     Direction change: stop → right
+2026-03-01 12:02:03,840  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:03,883  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:07,227  DEBUG     Direction change: right → stop
+2026-03-01 12:02:07,228  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:07,244  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:08,137  DEBUG     Direction change: stop → left
+2026-03-01 12:02:08,138  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:08,161  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:08,730  DEBUG     Direction change: left → stop
+2026-03-01 12:02:08,731  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:08,753  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:15,941  DEBUG     Direction change: stop → right
+2026-03-01 12:02:15,941  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:15,964  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:16,428  DEBUG     Direction change: right → stop
+2026-03-01 12:02:16,428  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:16,490  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:22,542  DEBUG     Direction change: stop → right
+2026-03-01 12:02:22,542  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:22,600  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:23,228  DEBUG     Direction change: right → stop
+2026-03-01 12:02:23,229  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:23,244  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:24,998  DEBUG     Direction change: stop → left
+2026-03-01 12:02:24,999  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:25,015  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:25,736  DEBUG     Direction change: left → stop
+2026-03-01 12:02:25,736  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:25,756  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:33,027  DEBUG     Direction change: stop → left
+2026-03-01 12:02:33,028  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:33,080  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:33,802  DEBUG     Direction change: left → stop
+2026-03-01 12:02:33,802  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:33,826  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:41,432  DEBUG     Direction change: stop → right
+2026-03-01 12:02:41,433  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:41,466  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:43,028  DEBUG     Direction change: right → stop
+2026-03-01 12:02:43,028  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:43,045  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:44,239  DEBUG     Direction change: stop → left
+2026-03-01 12:02:44,240  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:44,257  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:47,533  DEBUG     Direction change: left → stop
+2026-03-01 12:02:47,534  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:47,557  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:50,529  DEBUG     Direction change: stop → right
+2026-03-01 12:02:50,530  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:50,569  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:53,729  DEBUG     Direction change: right → stop
+2026-03-01 12:02:53,730  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:53,765  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:55,229  DEBUG     Direction change: stop → left
+2026-03-01 12:02:55,229  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:55,263  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:56,036  DEBUG     Direction change: left → stop
+2026-03-01 12:02:56,037  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:56,057  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:56,635  DEBUG     Direction change: stop → left
+2026-03-01 12:02:56,635  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:56,673  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:57,730  DEBUG     Direction change: left → stop
+2026-03-01 12:02:57,731  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:57,756  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:02:59,729  DEBUG     Direction change: stop → downright
+2026-03-01 12:02:59,730  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:59,764  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:02:59,828  DEBUG     Direction change: downright → stop
+2026-03-01 12:02:59,828  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:02:59,854  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:00,950  DEBUG     Direction change: stop → down
+2026-03-01 12:03:00,951  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:00,996  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:01,104  DEBUG     Direction change: down → stop
+2026-03-01 12:03:01,105  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:01,133  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:01,252  DEBUG     Direction change: stop → left
+2026-03-01 12:03:01,253  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:01,279  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:01,637  DEBUG     Direction change: left → stop
+2026-03-01 12:03:01,638  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:01,664  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:04,029  DEBUG     Direction change: stop → left
+2026-03-01 12:03:04,029  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:04,064  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:04,132  DEBUG     Direction change: left → stop
+2026-03-01 12:03:04,133  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:04,156  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:05,136  DEBUG     Direction change: stop → right
+2026-03-01 12:03:05,137  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:05,174  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:05,329  DEBUG     Direction change: right → stop
+2026-03-01 12:03:05,329  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:05,379  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:06,653  DEBUG     Direction change: stop → right
+2026-03-01 12:03:06,654  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:06,696  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:06,763  DEBUG     Direction change: right → stop
+2026-03-01 12:03:06,764  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:06,824  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:07,740  DEBUG     Direction change: stop → right
+2026-03-01 12:03:07,741  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:07,764  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:07,848  DEBUG     Direction change: right → stop
+2026-03-01 12:03:07,848  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:07,912  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:08,023  DEBUG     Direction change: stop → right
+2026-03-01 12:03:08,024  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:08,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:08,260  DEBUG     Direction change: right → stop
+2026-03-01 12:03:08,261  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:08,282  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:09,940  DEBUG     Direction change: stop → left
+2026-03-01 12:03:09,940  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:09,964  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:10,033  DEBUG     Direction change: left → right
+2026-03-01 12:03:10,034  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:10,069  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:10,131  DEBUG     Direction change: right → downright
+2026-03-01 12:03:10,132  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:10,155  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:10,232  DEBUG     Direction change: downright → stop
+2026-03-01 12:03:10,233  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:10,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:10,532  DEBUG     Direction change: stop → left
+2026-03-01 12:03:10,533  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:10,554  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:10,836  DEBUG     Direction change: left → right
+2026-03-01 12:03:10,837  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:10,855  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:11,132  DEBUG     Direction change: right → stop
+2026-03-01 12:03:11,133  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:11,154  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:11,238  DEBUG     Direction change: stop → right
+2026-03-01 12:03:11,239  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:11,262  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:11,631  DEBUG     Direction change: right → stop
+2026-03-01 12:03:11,631  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:11,663  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:11,733  DEBUG     Direction change: stop → right
+2026-03-01 12:03:11,734  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:11,756  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:11,837  DEBUG     Direction change: right → left
+2026-03-01 12:03:11,837  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:11,858  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:12,131  DEBUG     Direction change: left → right
+2026-03-01 12:03:12,132  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:12,155  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:12,515  DEBUG     Direction change: right → left
+2026-03-01 12:03:12,516  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:12,544  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:12,687  DEBUG     Direction change: left → right
+2026-03-01 12:03:12,688  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:12,711  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:12,858  DEBUG     Direction change: right → left
+2026-03-01 12:03:12,859  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:12,896  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:13,030  DEBUG     Direction change: left → right
+2026-03-01 12:03:13,031  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:13,096  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:13,440  DEBUG     Direction change: right → left
+2026-03-01 12:03:13,441  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:13,463  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:13,539  DEBUG     Direction change: left → right
+2026-03-01 12:03:13,540  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:13,562  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:13,765  DEBUG     Direction change: right → stop
+2026-03-01 12:03:13,766  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:13,804  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:13,940  DEBUG     Direction change: stop → right
+2026-03-01 12:03:13,940  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:13,955  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:14,039  DEBUG     Direction change: right → stop
+2026-03-01 12:03:14,039  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:14,062  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:14,946  DEBUG     Direction change: stop → left
+2026-03-01 12:03:14,946  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:14,976  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:15,050  DEBUG     Direction change: left → stop
+2026-03-01 12:03:15,051  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:15,065  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:18,639  DEBUG     Direction change: stop → right
+2026-03-01 12:03:18,640  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:18,678  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:19,328  DEBUG     Direction change: right → downright
+2026-03-01 12:03:19,329  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:19,348  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:19,427  DEBUG     Direction change: downright → right
+2026-03-01 12:03:19,428  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:19,455  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:22,030  DEBUG     Direction change: right → downleft
+2026-03-01 12:03:22,031  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:22,054  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:22,527  DEBUG     Direction change: downleft → left
+2026-03-01 12:03:22,528  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:22,553  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:23,432  DEBUG     Direction change: left → stop
+2026-03-01 12:03:23,432  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:23,449  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:27,826  DEBUG     Direction change: stop → left
+2026-03-01 12:03:27,827  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:27,881  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:28,428  DEBUG     Direction change: left → stop
+2026-03-01 12:03:28,428  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:28,443  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:28,829  DEBUG     Direction change: stop → left
+2026-03-01 12:03:28,829  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:28,859  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:29,129  DEBUG     Direction change: left → stop
+2026-03-01 12:03:29,129  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:29,146  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:29,334  DEBUG     Direction change: stop → left
+2026-03-01 12:03:29,335  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:29,356  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:29,639  DEBUG     Direction change: left → stop
+2026-03-01 12:03:29,640  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:29,657  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:29,734  DEBUG     Direction change: stop → left
+2026-03-01 12:03:29,735  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:29,764  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:30,278  DEBUG     Direction change: left → right
+2026-03-01 12:03:30,279  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:30,299  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:30,432  DEBUG     Direction change: right → left
+2026-03-01 12:03:30,433  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:30,461  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:30,533  DEBUG     Direction change: left → right
+2026-03-01 12:03:30,533  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:30,550  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:31,643  DEBUG     Direction change: right → stop
+2026-03-01 12:03:31,644  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:31,682  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:31,932  DEBUG     Direction change: stop → left
+2026-03-01 12:03:31,933  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:31,957  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:32,032  DEBUG     Direction change: left → stop
+2026-03-01 12:03:32,033  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:32,062  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:32,731  DEBUG     Direction change: stop → left
+2026-03-01 12:03:32,731  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:32,766  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:32,827  DEBUG     Direction change: left → stop
+2026-03-01 12:03:32,827  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:32,847  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:36,228  DEBUG     Direction change: stop → upleft
+2026-03-01 12:03:36,229  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:36,250  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:37,128  DEBUG     Direction change: upleft → left
+2026-03-01 12:03:37,129  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:37,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:37,634  DEBUG     Direction change: left → stop
+2026-03-01 12:03:37,635  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:37,655  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:47,634  DEBUG     Direction change: stop → down
+2026-03-01 12:03:47,634  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:47,674  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:47,830  DEBUG     Direction change: down → downright
+2026-03-01 12:03:47,830  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:47,854  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:48,229  DEBUG     Direction change: downright → down
+2026-03-01 12:03:48,230  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:48,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:48,333  DEBUG     Direction change: down → downright
+2026-03-01 12:03:48,334  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:48,355  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:48,631  DEBUG     Direction change: downright → right
+2026-03-01 12:03:48,631  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:48,678  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:48,930  DEBUG     Direction change: right → left
+2026-03-01 12:03:48,931  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:48,954  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:49,732  DEBUG     Direction change: left → stop
+2026-03-01 12:03:49,733  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:49,755  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:49,829  DEBUG     Direction change: stop → right
+2026-03-01 12:03:49,830  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:49,855  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:49,933  DEBUG     Direction change: right → left
+2026-03-01 12:03:49,934  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:49,954  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:50,030  DEBUG     Direction change: left → right
+2026-03-01 12:03:50,031  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:50,063  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:51,030  DEBUG     Direction change: right → stop
+2026-03-01 12:03:51,031  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:51,054  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:51,947  DEBUG     Direction change: stop → left
+2026-03-01 12:03:51,948  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:51,979  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:52,543  DEBUG     Direction change: left → upleft
+2026-03-01 12:03:52,544  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:52,584  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:52,749  DEBUG     Direction change: upleft → left
+2026-03-01 12:03:52,749  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:52,774  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:53,637  DEBUG     Direction change: left → right
+2026-03-01 12:03:53,638  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:53,656  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:53,735  DEBUG     Direction change: right → left
+2026-03-01 12:03:53,736  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:53,756  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:53,932  DEBUG     Direction change: left → stop
+2026-03-01 12:03:53,933  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:53,956  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:55,130  DEBUG     Direction change: stop → right
+2026-03-01 12:03:55,130  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:55,164  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:55,530  DEBUG     Direction change: right → stop
+2026-03-01 12:03:55,530  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:55,554  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:57,331  DEBUG     Direction change: stop → left
+2026-03-01 12:03:57,331  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:57,363  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:57,829  DEBUG     Direction change: left → stop
+2026-03-01 12:03:57,829  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:57,881  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:58,032  DEBUG     Direction change: stop → right
+2026-03-01 12:03:58,033  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:58,065  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:58,429  DEBUG     Direction change: right → stop
+2026-03-01 12:03:58,429  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:58,451  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:58,729  DEBUG     Direction change: stop → right
+2026-03-01 12:03:58,730  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:58,751  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:03:58,829  DEBUG     Direction change: right → stop
+2026-03-01 12:03:58,829  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:58,854  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:03:58,937  DEBUG     Direction change: stop → right
+2026-03-01 12:03:58,937  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:03:58,964  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:00,947  DEBUG     Direction change: right → stop
+2026-03-01 12:04:00,948  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:00,976  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:01,839  DEBUG     Direction change: stop → left
+2026-03-01 12:04:01,840  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:01,880  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:01,948  DEBUG     Direction change: left → stop
+2026-03-01 12:04:01,949  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:01,973  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:02,041  DEBUG     Direction change: stop → left
+2026-03-01 12:04:02,041  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,058  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:02,342  DEBUG     Direction change: left → stop
+2026-03-01 12:04:02,343  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,362  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:02,646  DEBUG     Direction change: stop → left
+2026-03-01 12:04:02,646  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,673  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:02,741  DEBUG     Direction change: left → stop
+2026-03-01 12:04:02,741  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,763  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:02,846  DEBUG     Direction change: stop → left
+2026-03-01 12:04:02,847  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,893  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:02,962  DEBUG     Direction change: left → stop
+2026-03-01 12:04:02,965  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:02,980  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:03,048  DEBUG     Direction change: stop → left
+2026-03-01 12:04:03,049  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:03,103  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:03,238  DEBUG     Direction change: left → stop
+2026-03-01 12:04:03,239  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:03,256  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:03,340  DEBUG     Direction change: stop → left
+2026-03-01 12:04:03,341  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:03,362  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:04,139  DEBUG     Direction change: left → right
+2026-03-01 12:04:04,139  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:04,163  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:04,239  DEBUG     Direction change: right → left
+2026-03-01 12:04:04,239  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:04,257  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:04,451  DEBUG     Direction change: left → right
+2026-03-01 12:04:04,452  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:04,474  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:04,641  DEBUG     Direction change: right → left
+2026-03-01 12:04:04,642  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:04,664  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:04,743  DEBUG     Direction change: left → right
+2026-03-01 12:04:04,743  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:04,766  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:05,440  DEBUG     Direction change: right → left
+2026-03-01 12:04:05,441  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:05,456  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:05,535  DEBUG     Direction change: left → right
+2026-03-01 12:04:05,536  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:05,556  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:05,738  DEBUG     Direction change: right → left
+2026-03-01 12:04:05,739  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:05,764  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:05,837  DEBUG     Direction change: left → right
+2026-03-01 12:04:05,838  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:05,857  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:05,940  DEBUG     Direction change: right → left
+2026-03-01 12:04:05,941  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:05,963  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:06,136  DEBUG     Direction change: left → stop
+2026-03-01 12:04:06,137  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:06,156  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:06,236  DEBUG     Direction change: stop → left
+2026-03-01 12:04:06,237  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:06,257  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:06,348  DEBUG     Direction change: left → stop
+2026-03-01 12:04:06,348  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:06,375  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:06,542  DEBUG     Direction change: stop → right
+2026-03-01 12:04:06,543  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:06,563  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:07,038  DEBUG     Direction change: right → left
+2026-03-01 12:04:07,038  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,056  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:07,138  DEBUG     Direction change: left → right
+2026-03-01 12:04:07,139  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,158  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:07,242  DEBUG     Direction change: right → stop
+2026-03-01 12:04:07,242  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,264  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:07,443  DEBUG     Direction change: stop → left
+2026-03-01 12:04:07,443  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,480  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:07,551  DEBUG     Direction change: left → stop
+2026-03-01 12:04:07,552  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,566  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:07,842  DEBUG     Direction change: stop → left
+2026-03-01 12:04:07,843  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,880  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:07,946  DEBUG     Direction change: left → stop
+2026-03-01 12:04:07,947  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:07,974  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:08,139  DEBUG     Direction change: stop → left
+2026-03-01 12:04:08,139  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:08,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:08,438  DEBUG     Direction change: left → stop
+2026-03-01 12:04:08,439  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:08,458  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:08,947  DEBUG     Direction change: stop → left
+2026-03-01 12:04:08,947  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:08,974  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:09,340  DEBUG     Direction change: left → stop
+2026-03-01 12:04:09,341  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:09,356  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:09,644  DEBUG     Direction change: stop → right
+2026-03-01 12:04:09,645  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:09,667  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:09,836  DEBUG     Direction change: right → upleft
+2026-03-01 12:04:09,837  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:09,878  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:11,232  DEBUG     Direction change: upleft → downright
+2026-03-01 12:04:11,232  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:11,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:11,639  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:11,677  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:11,736  DEBUG     Direction change: stop → downright
+2026-03-01 12:04:11,736  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:11,763  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:12,033  DEBUG     Direction change: downright → down
+2026-03-01 12:04:12,034  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:12,062  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:12,132  DEBUG     Direction change: down → downright
+2026-03-01 12:04:12,133  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:12,157  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:12,232  DEBUG     Direction change: downright → down
+2026-03-01 12:04:12,233  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:12,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:12,431  DEBUG     Direction change: down → stop
+2026-03-01 12:04:12,432  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:12,455  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:13,232  DEBUG     Direction change: stop → down
+2026-03-01 12:04:13,233  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:13,256  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&down&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:13,429  DEBUG     Direction change: down → stop
+2026-03-01 12:04:13,429  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:13,454  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:19,328  DEBUG     Direction change: stop → right
+2026-03-01 12:04:19,329  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:19,364  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:19,931  DEBUG     Direction change: right → stop
+2026-03-01 12:04:19,932  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:19,956  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:20,828  DEBUG     Direction change: stop → right
+2026-03-01 12:04:20,829  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:20,849  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:21,232  DEBUG     Direction change: right → stop
+2026-03-01 12:04:21,232  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:21,296  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:51,045  DEBUG     Direction change: stop → left
+2026-03-01 12:04:51,046  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:51,101  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:51,527  DEBUG     Direction change: left → upleft
+2026-03-01 12:04:51,528  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:51,550  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:52,227  DEBUG     Direction change: upleft → right
+2026-03-01 12:04:52,227  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:52,255  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:53,030  DEBUG     Direction change: right → left
+2026-03-01 12:04:53,030  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:53,051  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:54,129  DEBUG     Direction change: left → stop
+2026-03-01 12:04:54,129  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:54,155  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:54,229  DEBUG     Direction change: stop → right
+2026-03-01 12:04:54,230  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:54,264  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:54,329  DEBUG     Direction change: right → stop
+2026-03-01 12:04:54,330  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:54,351  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:04:55,830  DEBUG     Direction change: stop → downright
+2026-03-01 12:04:55,831  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:55,860  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:56,230  DEBUG     Direction change: downright → right
+2026-03-01 12:04:56,231  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:56,250  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:04:56,328  DEBUG     Direction change: right → stop
+2026-03-01 12:04:56,329  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:04:56,350  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:06,356  DEBUG     Direction change: stop → upleft
+2026-03-01 12:05:06,356  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:06,426  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&leftup&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:06,931  DEBUG     Direction change: upleft → stop
+2026-03-01 12:05:06,932  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:06,951  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:35,642  DEBUG     Direction change: stop → left
+2026-03-01 12:05:35,643  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:35,684  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&left&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:36,641  DEBUG     Direction change: left → stop
+2026-03-01 12:05:36,642  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:36,676  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:43,257  DEBUG     Direction change: stop → downright
+2026-03-01 12:05:43,258  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:43,296  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:43,542  DEBUG     Direction change: downright → stop
+2026-03-01 12:05:43,542  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:43,564  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:43,642  DEBUG     Direction change: stop → downright
+2026-03-01 12:05:43,643  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:43,667  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&rightdown&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:43,949  DEBUG     Direction change: downright → right
+2026-03-01 12:05:43,949  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:43,994  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:44,741  DEBUG     Direction change: right → stop
+2026-03-01 12:05:44,742  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:44,764  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:46,135  DEBUG     Direction change: stop → right
+2026-03-01 12:05:46,136  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:46,156  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&right&2&2 HTTP/1.1" 200 33
+2026-03-01 12:05:46,436  DEBUG     Direction change: right → stop
+2026-03-01 12:05:46,437  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:46,465  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:50,479  INFO      Shutting down — stop command sent to camera
+2026-03-01 12:05:50,479  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:05:50,516  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:05:50,525  INFO      ─── PTZ Tracker stopped ───
