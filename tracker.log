@@ -1502,3 +1502,36 @@
 2026-03-01 12:05:50,479  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
 2026-03-01 12:05:50,516  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
 2026-03-01 12:05:50,525  INFO      ─── PTZ Tracker stopped ───
+2026-03-01 12:18:20,083  INFO      ─── PTZ Tracker starting ───
+2026-03-01 12:18:20,084  INFO      Log file: /Users/freedommedia/Documents/GitHub/ptz-tracker/tracker.log
+2026-03-01 12:18:20,084  INFO      Loading YOLO model...
+2026-03-01 12:18:20,105  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 12:18:21,106  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 12:18:21,430  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:18:21,481  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:19:13,379  INFO      Shutting down — stop command sent to camera
+2026-03-01 12:19:13,380  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:19:13,418  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:19:13,428  INFO      ─── PTZ Tracker stopped ───
+2026-03-01 12:21:16,716  INFO      ─── PTZ Tracker starting ───
+2026-03-01 12:21:16,716  INFO      Log file: /Users/freedommedia/Documents/GitHub/ptz-tracker/tracker.log
+2026-03-01 12:21:16,716  INFO      Loading YOLO model...
+2026-03-01 12:21:16,763  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 12:21:17,778  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 12:21:18,085  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:21:18,106  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:21:45,613  INFO      Shutting down — stop command sent to camera
+2026-03-01 12:21:45,614  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:21:45,654  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:21:45,665  INFO      ─── PTZ Tracker stopped ───
+2026-03-01 12:21:50,646  INFO      ─── PTZ Tracker starting ───
+2026-03-01 12:21:50,646  INFO      Log file: /Users/freedommedia/Documents/GitHub/ptz-tracker/tracker.log
+2026-03-01 12:21:50,646  INFO      Loading YOLO model...
+2026-03-01 12:21:50,660  INFO      Connecting to rtsp://192.168.200.214:554/2
+2026-03-01 12:21:51,681  INFO      Stream: 640x360  |  Close the video window to quit.
+2026-03-01 12:21:51,970  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:21:52,011  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:21:56,564  INFO      Shutting down — stop command sent to camera
+2026-03-01 12:21:56,565  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
+2026-03-01 12:21:56,602  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
+2026-03-01 12:21:56,624  INFO      ─── PTZ Tracker stopped ───

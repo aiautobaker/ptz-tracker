@@ -4,6 +4,7 @@ import logging
 import requests
 import sys
 import tkinter as tk
+from tkinter import ttk
 from pathlib import Path
 from PIL import Image, ImageTk
 from ultralytics import YOLO
@@ -205,32 +206,71 @@ def main():
     ctrl = tk.Toplevel(root)
     ctrl.title("PTZ Tracker — Controls")
     ctrl.configure(bg="#1e1e1e")
-    ctrl.resizable(False, False)
+    ctrl.resizable(True, True)
+    ctrl.geometry("300x420")
 
-    panel = tk.Frame(ctrl, bg="#1e1e1e", padx=14)
-    panel.pack(fill=tk.BOTH, expand=True, pady=(0, 8))
+    style = ttk.Style(ctrl)
+    style.theme_use("default")
+    style.configure("TNotebook", background="#1e1e1e", borderwidth=0)
+    style.configure("TNotebook.Tab", background="#333", foreground="#ccc",
+                    padding=[12, 5], font=("Helvetica", 10))
+    style.map("TNotebook.Tab",
+              background=[("selected", "#1e1e1e")],
+              foreground=[("selected", "#ffffff")])
+    style.configure("Vert.TScrollbar", background="#444", troughcolor="#1e1e1e",
+                    arrowcolor="#888", borderwidth=0)
+
+    notebook = ttk.Notebook(ctrl)
+    notebook.pack(fill=tk.BOTH, expand=True, padx=4, pady=4)
+
+    tab_tracking = tk.Frame(notebook, bg="#1e1e1e")
+    tab_target   = tk.Frame(notebook, bg="#1e1e1e")
+    tab_framing  = tk.Frame(notebook, bg="#1e1e1e")
+    tab_settings = tk.Frame(notebook, bg="#1e1e1e")
+
+    notebook.add(tab_tracking, text="Tracking")
+    notebook.add(tab_target,   text="Target")
+    notebook.add(tab_framing,  text="Framing")
+    notebook.add(tab_settings, text="Settings")
 
     # ── Widget helpers ────────────────────
     lbl  = {"bg": "#1e1e1e", "fg": "#cccccc", "font": ("Helvetica", 11)}
     sldr = {"bg": "#1e1e1e", "fg": "#ffffff", "troughcolor": "#444",
-            "highlightthickness": 0, "length": 260}
+            "highlightthickness": 0, "length": 240}
 
-    def section(t):
-        tk.Label(panel, text=t, bg="#1e1e1e", fg="#888",
-                 font=("Helvetica", 9)).pack(pady=(14, 0))
+    def make_scrollable(parent):
+        """Wrap a tab in a scrollable canvas; return the inner content frame."""
+        c  = tk.Canvas(parent, bg="#1e1e1e", highlightthickness=0)
+        sb = ttk.Scrollbar(parent, orient="vertical", command=c.yview,
+                           style="Vert.TScrollbar")
+        inner = tk.Frame(c, bg="#1e1e1e", padx=12)
+        win   = c.create_window((0, 0), window=inner, anchor="nw")
+        inner.bind("<Configure>", lambda e: c.configure(scrollregion=c.bbox("all")))
+        c.bind("<Configure>",     lambda e: c.itemconfig(win, width=e.width))
+        c.configure(yscrollcommand=sb.set)
+        # macOS / Windows mouse-wheel
+        c.bind("<MouseWheel>",
+               lambda e: c.yview_scroll(int(-1 * (e.delta / 120)), "units"))
+        sb.pack(side=tk.RIGHT, fill=tk.Y)
+        c.pack(side=tk.LEFT,  fill=tk.BOTH, expand=True)
+        return inner
 
-    def make_slider(label, key, lo, hi, res, is_int=False):
-        tk.Label(panel, text=label, **lbl).pack(pady=(8, 0))
+    def section(parent, t):
+        tk.Label(parent, text=t, bg="#1e1e1e", fg="#888",
+                 font=("Helvetica", 9)).pack(pady=(10, 0))
+
+    def make_slider(parent, label, key, lo, hi, res, is_int=False):
+        tk.Label(parent, text=label, **lbl).pack(pady=(4, 0))
         var = tk.DoubleVar(value=settings[key])
         def cb(v):
             settings[key] = int(float(v)) if is_int else round(float(v), 2)
-        tk.Scale(panel, from_=lo, to=hi, resolution=res,
+        tk.Scale(parent, from_=lo, to=hi, resolution=res,
                  orient="horizontal", variable=var, command=cb, **sldr).pack()
         return var
 
-    def make_slider_pair(label1, key1, label2, key2, lo, hi, res, is_int=False):
-        row = tk.Frame(panel, bg="#1e1e1e")
-        row.pack(fill=tk.X, pady=(8, 0))
+    def make_slider_pair(parent, label1, key1, label2, key2, lo, hi, res, is_int=False):
+        row = tk.Frame(parent, bg="#1e1e1e")
+        row.pack(fill=tk.X, pady=(4, 0))
         vars_out = []
         for label, key in [(label1, key1), (label2, key2)]:
             col = tk.Frame(row, bg="#1e1e1e")
@@ -242,29 +282,46 @@ def main():
                 settings[k] = int(float(v)) if is_int else round(float(v), 2)
             tk.Scale(col, from_=lo, to=hi, resolution=res, orient="horizontal",
                      variable=var, command=cb, bg="#1e1e1e", fg="#fff",
-                     troughcolor="#444", highlightthickness=0, length=120).pack()
+                     troughcolor="#444", highlightthickness=0, length=110).pack()
             vars_out.append(var)
         return vars_out
 
-    tk.Label(panel, text="PTZ TRACKER", bg="#1e1e1e", fg="#fff",
-             font=("Helvetica", 13, "bold")).pack(pady=(18, 4))
+    # ── Tab 1: Tracking ───────────────────
+    trk = make_scrollable(tab_tracking)
 
-    section("── DEADZONE ──")
-    make_slider_pair("Horizontal", "deadzone_x", "Vertical", "deadzone_y", 0.02, 0.40, 0.01)
+    tk.Label(trk, text="PTZ TRACKER", bg="#1e1e1e", fg="#fff",
+             font=("Helvetica", 13, "bold")).pack(pady=(12, 2))
 
-    section("── SPEED ──")
-    make_slider_pair("Pan Speed", "pan_speed", "Tilt Speed", "tilt_speed", 1, 12, 1, is_int=True)
+    section(trk, "── DEADZONE ──")
+    make_slider_pair(trk, "Horizontal", "deadzone_x", "Vertical", "deadzone_y", 0.02, 0.40, 0.01)
 
-    section("── PERFORMANCE ──")
-    make_slider("Process Every N Frames", "process_every_n", 1, 10, 1, is_int=True)
+    section(trk, "── SPEED ──")
+    make_slider_pair(trk, "Pan Speed", "pan_speed", "Tilt Speed", "tilt_speed", 1, 12, 1, is_int=True)
 
-    section("── TARGET POSITION ──")
-    tk.Label(panel, text="Click or drag on the video to move the target.",
+    section(trk, "── PERFORMANCE ──")
+    make_slider(trk, "Process Every N Frames", "process_every_n", 1, 10, 1, is_int=True)
+
+    section(trk, "── TRACKING ──")
+    tvar = tk.BooleanVar(value=settings["tracking_on"])
+    tk.Checkbutton(trk, text="Tracking Enabled", variable=tvar,
+                   command=lambda: settings.update(tracking_on=tvar.get()),
+                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
+                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
+
+    status_var = tk.StringVar(value="Waiting for stream…")
+    tk.Label(trk, textvariable=status_var, bg="#1e1e1e", fg="#00cc44",
+             font=("Helvetica", 10), wraplength=240, justify=tk.LEFT).pack(pady=(4, 8))
+
+    # ── Tab 2: Target ─────────────────────
+    tgt = make_scrollable(tab_target)
+
+    section(tgt, "── TARGET POSITION ──")
+    tk.Label(tgt, text="Click or drag on the video to move the target.",
              bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=260, justify=tk.LEFT).pack(pady=(4, 0))
+             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
 
     target_x_var, target_y_var = make_slider_pair(
-        "Horizontal", "target_x", "Vertical", "target_y", -0.9, 0.9, 0.01)
+        tgt, "Horizontal", "target_x", "Vertical", "target_y", -0.9, 0.9, 0.01)
 
     def reset_target():
         settings["target_x"] = 0.0
@@ -272,50 +329,27 @@ def main():
         target_x_var.set(0.0)
         target_y_var.set(0.0)
 
-    tk.Button(panel, text="Reset to Centre", command=reset_target,
+    tk.Button(tgt, text="Reset to Centre", command=reset_target,
               bg="#333", fg="#fff", font=("Helvetica", 10),
               relief=tk.FLAT, padx=8, pady=4).pack(pady=(8, 0))
 
-    section("── ZOOM FRAMING ──")
-    tk.Label(panel,
-             text="Auto-adjusts vertical framing based on how large\n"
-                  "the person appears (proxy for zoom level).",
+    section(tgt, "── TARGET PERSON ──")
+    tk.Label(tgt,
+             text="Click 'Capture' then click a person in the video to lock on.\n"
+                  "Requires a live camera with a detected person.",
              bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=260, justify=tk.LEFT).pack(pady=(4, 0))
+             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
 
-    framing_var = tk.BooleanVar(value=settings["framing_on"])
-    tk.Checkbutton(panel, text="Zoom Framing Enabled", variable=framing_var,
-                   command=lambda: settings.update(framing_on=framing_var.get()),
-                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
-                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
-
-    make_slider_pair("Wide Shot  Y", "framing_wide_y", "Close-up  Y", "framing_close_y", -0.9, 0.9, 0.01)
-    make_slider("Switch Threshold  (% frame height)", "framing_threshold",  5,   80,   1, is_int=True)
-
-    zoom_mode_var = tk.StringVar(value="—")
-    framing_row = tk.Frame(panel, bg="#1e1e1e")
-    framing_row.pack(pady=(4, 0))
-    tk.Label(framing_row, text="Current:", bg="#1e1e1e", fg="#888",
-             font=("Helvetica", 9)).pack(side=tk.LEFT)
-    tk.Label(framing_row, textvariable=zoom_mode_var, bg="#1e1e1e", fg="#ffcc44",
-             font=("Helvetica", 9, "bold")).pack(side=tk.LEFT, padx=(4, 0))
-
-    section("── TARGET PERSON ──")
-    tk.Label(panel,
-             text="Click 'Capture' then click a person in the video to lock on.",
-             bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=260, justify=tk.LEFT).pack(pady=(4, 0))
-
-    thumb_label = tk.Label(panel, bg="#2a2a2a", width=64, height=96,
+    thumb_label = tk.Label(tgt, bg="#2a2a2a", width=64, height=64,
                            relief=tk.FLAT)
     thumb_label.pack(pady=(6, 2))
 
     target_status_var = tk.StringVar(value="No target set — tracking largest person")
-    tk.Label(panel, textvariable=target_status_var, bg="#1e1e1e", fg="#aaaaaa",
-             font=("Helvetica", 9), wraplength=260, justify=tk.LEFT).pack()
+    tk.Label(tgt, textvariable=target_status_var, bg="#1e1e1e", fg="#aaaaaa",
+             font=("Helvetica", 9), wraplength=240, justify=tk.LEFT).pack()
 
-    btn_row = tk.Frame(panel, bg="#1e1e1e")
-    btn_row.pack(pady=(6, 0))
+    btn_row = tk.Frame(tgt, bg="#1e1e1e")
+    btn_row.pack(pady=(6, 8))
 
     def do_capture_target():
         capture_mode[0] = True
@@ -324,7 +358,7 @@ def main():
     def do_clear_target():
         reference_hist[0] = None
         thumb_photo[0]    = None
-        thumb_label.config(image="", width=64, height=96)
+        thumb_label.config(image="", width=64, height=64)
         capture_mode[0]   = False
         target_status_var.set("No target set — tracking largest person")
         log.info("Target person cleared")
@@ -336,32 +370,50 @@ def main():
               bg="#5c1a1a", fg="#fff", font=("Helvetica", 10),
               relief=tk.FLAT, padx=8, pady=4).pack(side=tk.LEFT, padx=4)
 
-    section("── TRACKING ──")
-    tvar = tk.BooleanVar(value=settings["tracking_on"])
-    tk.Checkbutton(panel, text="Tracking Enabled", variable=tvar,
-                   command=lambda: settings.update(tracking_on=tvar.get()),
+    # ── Tab 3: Framing ────────────────────
+    frm_ = make_scrollable(tab_framing)
+
+    section(frm_, "── ZOOM FRAMING ──")
+    tk.Label(frm_,
+             text="Auto-adjusts vertical framing based on how large\n"
+                  "the person appears (proxy for zoom level).",
+             bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
+             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
+
+    framing_var = tk.BooleanVar(value=settings["framing_on"])
+    tk.Checkbutton(frm_, text="Zoom Framing Enabled", variable=framing_var,
+                   command=lambda: settings.update(framing_on=framing_var.get()),
                    bg="#1e1e1e", fg="#fff", selectcolor="#333",
-                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=10)
+                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
 
-    status_var = tk.StringVar(value="Waiting for stream…")
-    tk.Label(panel, textvariable=status_var, bg="#1e1e1e", fg="#00cc44",
-             font=("Helvetica", 10), wraplength=260, justify=tk.LEFT).pack(pady=(4, 8))
+    make_slider_pair(frm_, "Wide Shot  Y", "framing_wide_y", "Close-up  Y", "framing_close_y", -0.9, 0.9, 0.01)
+    make_slider(frm_, "Switch Threshold  (% frame height)", "framing_threshold", 5, 80, 1, is_int=True)
 
-    section("── DEFAULTS ──")
-    save_btn = tk.Button(panel, text="Save as Default",
+    zoom_mode_var = tk.StringVar(value="—")
+    framing_row = tk.Frame(frm_, bg="#1e1e1e")
+    framing_row.pack(pady=(4, 0))
+    tk.Label(framing_row, text="Current:", bg="#1e1e1e", fg="#888",
+             font=("Helvetica", 9)).pack(side=tk.LEFT)
+    tk.Label(framing_row, textvariable=zoom_mode_var, bg="#1e1e1e", fg="#ffcc44",
+             font=("Helvetica", 9, "bold")).pack(side=tk.LEFT, padx=(4, 0))
+
+    # ── Tab 4: Settings ───────────────────
+    stg = make_scrollable(tab_settings)
+
+    save_btn = tk.Button(stg, text="Save as Default",
                          bg="#1a3c5c", fg="#fff", font=("Helvetica", 10),
                          relief=tk.FLAT, padx=8, pady=4)
-    save_btn.pack(pady=(8, 4))
+    save_btn.pack(pady=(24, 4))
     save_status_var = tk.StringVar(value="")
-    tk.Label(panel, textvariable=save_status_var, bg="#1e1e1e", fg="#5599cc",
+    tk.Label(stg, textvariable=save_status_var, bg="#1e1e1e", fg="#5599cc",
              font=("Helvetica", 9)).pack(pady=(0, 16))
 
     def do_save_settings():
         save_settings()
         save_status_var.set("Saved ✓")
         save_btn.config(text="Saved ✓")
-        panel.after(1500, lambda: (save_status_var.set(""),
-                                   save_btn.config(text="Save as Default")))
+        stg.after(1500, lambda: (save_status_var.set(""),
+                                 save_btn.config(text="Save as Default")))
 
     save_btn.config(command=do_save_settings)
 
