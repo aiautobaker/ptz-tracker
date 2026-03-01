@@ -40,7 +40,7 @@ echo "[INFO] Camera: 192.168.200.214"
 echo "[INFO] Press Q in the video window to quit."
 echo ""
 
-python tracker.py
+python3 tracker.py
 
 echo ""
 echo "[INFO] PTZ Tracker stopped."
