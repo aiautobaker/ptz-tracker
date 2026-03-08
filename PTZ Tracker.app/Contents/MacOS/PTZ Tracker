@@ -1,11 +1,2 @@
 #!/bin/bash
-# PTZ Tracker – macOS App Bundle Launcher
-# Opens a Terminal window and runs the tracker inside it.
-
-# The project folder is 3 levels up from this script (MacOS/ → Contents/ → .app/ → project/)
-APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(cd "$APP_DIR/../../.." && pwd)"
-COMMAND_FILE="$PROJECT_DIR/PTZ Tracker.command"
-
-# Launch the .command file in a new Terminal window
-open -a Terminal "$COMMAND_FILE"
+exec "/Users/freedommedia/Documents/GitHub/ptz-tracker/venv/bin/python3" "/Users/freedommedia/Documents/GitHub/ptz-tracker/tracker.py"

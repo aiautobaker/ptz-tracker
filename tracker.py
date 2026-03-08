@@ -39,20 +39,25 @@ HTTP_BASE = f"http://{CAMERA_IP}/cgi-bin/ptzctrl.cgi"
 # LIVE SETTINGS  (sliders / mouse write here)
 # ─────────────────────────────────────────
 settings = {
-    "deadzone_x":      0.15,
-    "deadzone_y":      0.18,
-    "pan_speed":       2,
-    "tilt_speed":      2,
+    "deadzone_x_wide":  0.08,
+    "deadzone_y_wide":  0.30,
+    "deadzone_x_close": 0.05,
+    "deadzone_y_close": 0.15,
+    "pan_speed":       3,
+    "tilt_speed":      1,
+    "variable_speed":  True,
+    "smooth_alpha":    0.5,    # EMA weight: 1.0 = raw, 0.1 = very smooth
     "process_every_n": 3,
     "tracking_on":     True,
     # Target offset — 0.0 = frame centre, ±1.0 = frame edge
-    "target_x":        0.0,
-    "target_y":        0.0,
-    # Zoom-aware framing
-    "framing_on":        False,
-    "framing_wide_y":    0.0,    # vertical target when person is small in frame
-    "framing_close_y":  -0.15,   # vertical target when person fills the frame
-    "framing_threshold": 35,     # person-height % of frame that triggers "close-up"
+    "target_x":          0.0,
+    "target_y_wide":    -0.4,    # vertical target in wide/normal shot
+    "target_y_close":   -0.2,    # vertical target in close-up shot
+    # close-up is detected when head (box top) is within 12% of the top of the frame
+    # Auto zoom-out on subject loss
+    "auto_zoom_out":    False,
+    "zoom_out_speed":   3,
+    "zoom_out_delay":   15,    # consecutive missed frames before zooming out
 }
 
 def load_settings():
@@ -85,8 +90,26 @@ def send_ptz(cmd):
     except Exception as e:
         log.warning(f"PTZ command failed ({cmd}): {e}")
 
-def move(direction):
-    pan, tilt = settings["pan_speed"], settings["tilt_speed"]
+def zoom(direction):
+    speed = settings["zoom_out_speed"]
+    cmds = {
+        "in":   f"zoomin&{speed}&0",
+        "out":  f"zoomout&{speed}&0",
+        "stop": "zoomstop&0&0",
+    }
+    if direction in cmds:
+        send_ptz(cmds[direction])
+
+def compute_speed(offset, deadzone, max_speed):
+    """Proportionally map |offset| → speed in [1, max_speed].
+    Returns 1 at the deadzone edge, max_speed at ±1.0."""
+    beyond = max(0.0, abs(offset) - deadzone)
+    frac   = beyond / max(1e-6, 1.0 - deadzone)
+    return max(1, min(max_speed, round(1 + frac * (max_speed - 1))))
+
+def move(direction, pan=None, tilt=None):
+    pan  = pan  if pan  is not None else settings["pan_speed"]
+    tilt = tilt if tilt is not None else settings["tilt_speed"]
     cmds = {
         "left":      f"left&{pan}&{tilt}",
         "right":     f"right&{pan}&{tilt}",
@@ -104,65 +127,48 @@ def move(direction):
 # ─────────────────────────────────────────
 # TRACKING LOGIC
 # ─────────────────────────────────────────
-def get_direction(ox, oy):
-    in_x = abs(ox) < settings["deadzone_x"]
-    in_y = abs(oy) < settings["deadzone_y"]
+def get_direction(ox, oy, dz_x, dz_y):
+    in_x = abs(ox) < dz_x
+    in_y = abs(oy) < dz_y
     if in_x and in_y:
         return "stop"
     h = "" if in_x else ("right" if ox > 0 else "left")
     v = "" if in_y else ("down"  if oy > 0 else "up")
     return (v + h) if (h and v) else (h or v)
 
-def find_best_person(results):
-    best, best_area = None, 0
+def get_track_boxes(results):
+    """Return list of (x1, y1, x2, y2, track_id) for all tracked persons."""
+    boxes = []
     for r in results:
-        for box in r.boxes:
+        if r.boxes.id is None:
+            continue
+        ids = r.boxes.id.int().tolist()
+        for box, tid in zip(r.boxes, ids):
             if int(box.cls[0]) != 0:
                 continue
             x1, y1, x2, y2 = box.xyxy[0].tolist()
-            area = (x2 - x1) * (y2 - y1)
-            if area > best_area:
-                best_area, best = area, (x1, y1, x2, y2)
-    return best
-
-def get_all_persons(results):
-    """Return a list of (x1,y1,x2,y2) for every detected person."""
-    boxes = []
-    for r in results:
-        for box in r.boxes:
-            if int(box.cls[0]) != 0:
-                continue
-            boxes.append(tuple(box.xyxy[0].tolist()))
+            boxes.append((x1, y1, x2, y2, tid))
     return boxes
 
+def find_tracked_person(track_boxes, ref_id):
+    """Find box by track ID. Falls back to largest person if no ref_id set."""
+    if not track_boxes:
+        return None
+    if ref_id is None:
+        return max(track_boxes, key=lambda b: (b[2]-b[0]) * (b[3]-b[1]))[:4]
+    for b in track_boxes:
+        if b[4] == ref_id:
+            return b[:4]
+    return None
+
 def compute_hist(bgr_crop):
-    """HSV hue-saturation histogram, normalised to [0,1]."""
+    """HSV histogram — used only for thumbnail generation."""
     if bgr_crop is None or bgr_crop.size == 0:
         return None
     hsv = cv2.cvtColor(bgr_crop, cv2.COLOR_BGR2HSV)
     hist = cv2.calcHist([hsv], [0, 1], None, [50, 60], [0, 180, 0, 256])
     cv2.normalize(hist, hist, 0, 1, cv2.NORM_MINMAX)
     return hist
-
-def find_target_person(results, frame, ref_hist):
-    """Return the box of the person who best matches ref_hist.
-    Falls back to the largest person when no reference is set."""
-    if ref_hist is None:
-        return find_best_person(results)
-    best_box, best_score = None, 0.40   # minimum similarity floor
-    for r in results:
-        for box in r.boxes:
-            if int(box.cls[0]) != 0:
-                continue
-            x1, y1, x2, y2 = box.xyxy[0].tolist()
-            crop = frame[int(y1):int(y2), int(x1):int(x2)]
-            hist = compute_hist(crop)
-            if hist is None:
-                continue
-            score = cv2.compareHist(ref_hist, hist, cv2.HISTCMP_CORREL)
-            if score > best_score:
-                best_score, best_box = score, (x1, y1, x2, y2)
-    return best_box
 
 # ─────────────────────────────────────────
 # MAIN
@@ -192,24 +198,26 @@ def main():
     fh = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     log.info(f"Stream: {fw}x{fh}  |  Close the video window to quit.")
 
-    # ── Main video window ─────────────────
+    # ── Single combined window ────────────
     root = tk.Tk()
-    root.title("PTZ Tracker — Video")
+    root.title("PTZ Tracker")
     root.configure(bg="black")
-    root.resizable(False, False)
+    root.resizable(True, True)
+    root.minsize(fw + 420, fh)
 
-    canvas = tk.Canvas(root, width=fw, height=fh, bg="black",
+    main_frame = tk.Frame(root, bg="black")
+    main_frame.pack(fill=tk.BOTH, expand=True)
+
+    canvas = tk.Canvas(main_frame, bg="black",
                        highlightthickness=0, cursor="crosshair")
-    canvas.pack()
+    canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-    # ── Separate controls window ──────────
-    ctrl = tk.Toplevel(root)
-    ctrl.title("PTZ Tracker — Controls")
-    ctrl.configure(bg="#1e1e1e")
-    ctrl.resizable(True, True)
-    ctrl.geometry("300x420")
+    # ── Settings panel (right side) ───────
+    ctrl = tk.Frame(main_frame, bg="#1e1e1e", width=420)
+    ctrl.pack(side=tk.LEFT, fill=tk.Y)
+    ctrl.pack_propagate(False)
 
-    style = ttk.Style(ctrl)
+    style = ttk.Style(root)
     style.theme_use("default")
     style.configure("TNotebook", background="#1e1e1e", borderwidth=0)
     style.configure("TNotebook.Tab", background="#333", foreground="#ccc",
@@ -220,6 +228,11 @@ def main():
     style.configure("Vert.TScrollbar", background="#444", troughcolor="#1e1e1e",
                     arrowcolor="#888", borderwidth=0)
 
+    status_var = tk.StringVar(value="Waiting for stream…")
+
+    def _toggle_tracking():
+        settings["tracking_on"] = not settings["tracking_on"]
+
     notebook = ttk.Notebook(ctrl)
     notebook.pack(fill=tk.BOTH, expand=True, padx=4, pady=4)
 
@@ -227,22 +240,20 @@ def main():
     tab_target   = tk.Frame(notebook, bg="#1e1e1e")
     tab_framing  = tk.Frame(notebook, bg="#1e1e1e")
     tab_settings = tk.Frame(notebook, bg="#1e1e1e")
+    tab_controls = tk.Frame(notebook, bg="#1e1e1e")
 
     notebook.add(tab_tracking, text="Tracking")
     notebook.add(tab_target,   text="Target")
     notebook.add(tab_framing,  text="Framing")
     notebook.add(tab_settings, text="Settings")
+    notebook.add(tab_controls, text="Controls")
 
     # ── Widget helpers ────────────────────
-    lbl  = {"bg": "#1e1e1e", "fg": "#cccccc", "font": ("Helvetica", 11)}
-    sldr = {"bg": "#1e1e1e", "fg": "#ffffff", "troughcolor": "#444",
-            "highlightthickness": 0, "length": 240}
 
     def make_scrollable(parent):
         """Wrap a tab in a scrollable canvas; return the inner content frame."""
         c  = tk.Canvas(parent, bg="#1e1e1e", highlightthickness=0)
-        sb = ttk.Scrollbar(parent, orient="vertical", command=c.yview,
-                           style="Vert.TScrollbar")
+        sb = ttk.Scrollbar(parent, orient="vertical", command=c.yview)
         inner = tk.Frame(c, bg="#1e1e1e", padx=12)
         win   = c.create_window((0, 0), window=inner, anchor="nw")
         inner.bind("<Configure>", lambda e: c.configure(scrollregion=c.bbox("all")))
@@ -259,32 +270,57 @@ def main():
         tk.Label(parent, text=t, bg="#1e1e1e", fg="#888",
                  font=("Helvetica", 9)).pack(pady=(10, 0))
 
-    def make_slider(parent, label, key, lo, hi, res, is_int=False):
-        tk.Label(parent, text=label, **lbl).pack(pady=(4, 0))
-        var = tk.DoubleVar(value=settings[key])
-        def cb(v):
-            settings[key] = int(float(v)) if is_int else round(float(v), 2)
-        tk.Scale(parent, from_=lo, to=hi, resolution=res,
-                 orient="horizontal", variable=var, command=cb, **sldr).pack()
+    _ent_style = dict(bg="#2a2a2a", fg="#ffffff", insertbackground="#fff",
+                      relief=tk.FLAT, font=("Helvetica", 11), width=8)
+
+    def make_entry(parent, label, key, lo, hi, res=None, is_int=False):
+        row = tk.Frame(parent, bg="#1e1e1e")
+        row.pack(fill=tk.X, pady=(4, 0), padx=8)
+        tk.Label(row, text=label, bg="#1e1e1e", fg="#cccccc",
+                 font=("Helvetica", 10), anchor="w").pack(side=tk.LEFT)
+        fmt = (lambda v: str(int(v))) if is_int else (lambda v: f"{v:.3f}")
+        var = tk.StringVar(value=fmt(settings[key]))
+        ent = tk.Entry(row, textvariable=var, **_ent_style)
+        ent.pack(side=tk.RIGHT)
+        def apply(e=None):
+            try:
+                v = int(float(var.get())) if is_int else round(float(var.get()), 3)
+                v = max(lo, min(hi, v))
+                settings[key] = v
+                var.set(fmt(v))
+            except ValueError:
+                var.set(fmt(settings[key]))
+        ent.bind("<Return>", apply)
+        ent.bind("<FocusOut>", apply)
         return var
 
-    def make_slider_pair(parent, label1, key1, label2, key2, lo, hi, res, is_int=False):
+    def make_entry_pair(parent, label1, key1, label2, key2, lo, hi, res=None, is_int=False):
         row = tk.Frame(parent, bg="#1e1e1e")
-        row.pack(fill=tk.X, pady=(4, 0))
+        row.pack(fill=tk.X, pady=(4, 0), padx=8)
+        fmt = (lambda v: str(int(v))) if is_int else (lambda v: f"{v:.3f}")
         vars_out = []
         for label, key in [(label1, key1), (label2, key2)]:
-            col = tk.Frame(row, bg="#1e1e1e")
-            col.pack(side=tk.LEFT, fill=tk.X, expand=True)
-            tk.Label(col, text=label, bg="#1e1e1e", fg="#cccccc",
-                     font=("Helvetica", 10)).pack(pady=(0, 2))
-            var = tk.DoubleVar(value=settings[key])
-            def cb(v, k=key):
-                settings[k] = int(float(v)) if is_int else round(float(v), 2)
-            tk.Scale(col, from_=lo, to=hi, resolution=res, orient="horizontal",
-                     variable=var, command=cb, bg="#1e1e1e", fg="#fff",
-                     troughcolor="#444", highlightthickness=0, length=110).pack()
+            tk.Label(row, text=label + ":", bg="#1e1e1e", fg="#aaaaaa",
+                     font=("Helvetica", 10)).pack(side=tk.LEFT, padx=(0, 2))
+            var = tk.StringVar(value=fmt(settings[key]))
+            ent = tk.Entry(row, textvariable=var, **{**_ent_style, "width": 7})
+            ent.pack(side=tk.LEFT, padx=(0, 12))
+            def apply(e=None, k=key, v=var):
+                try:
+                    val = int(float(v.get())) if is_int else round(float(v.get()), 3)
+                    val = max(lo, min(hi, val))
+                    settings[k] = val
+                    v.set(fmt(val))
+                except ValueError:
+                    v.set(fmt(settings[k]))
+            ent.bind("<Return>", apply)
+            ent.bind("<FocusOut>", apply)
             vars_out.append(var)
         return vars_out
+
+    # Keep old names as aliases so call sites need no changes
+    make_slider      = make_entry
+    make_slider_pair = make_entry_pair
 
     # ── Tab 1: Tracking ───────────────────
     trk = make_scrollable(tab_tracking)
@@ -292,45 +328,51 @@ def main():
     tk.Label(trk, text="PTZ TRACKER", bg="#1e1e1e", fg="#fff",
              font=("Helvetica", 13, "bold")).pack(pady=(12, 2))
 
-    section(trk, "── DEADZONE ──")
-    make_slider_pair(trk, "Horizontal", "deadzone_x", "Vertical", "deadzone_y", 0.02, 0.40, 0.01)
+    section(trk, "── DEADZONE (Wide Shot) ──")
+    make_slider_pair(trk, "Horizontal", "deadzone_x_wide", "Vertical", "deadzone_y_wide", 0.02, 0.40, 0.01)
+
+    section(trk, "── DEADZONE (Close-up) ──")
+    make_slider_pair(trk, "Horizontal", "deadzone_x_close", "Vertical", "deadzone_y_close", 0.02, 0.40, 0.01)
 
     section(trk, "── SPEED ──")
+    vs_var = tk.BooleanVar(value=settings["variable_speed"])
+    tk.Checkbutton(trk, text="Variable Speed (auto)", variable=vs_var,
+                   command=lambda: settings.update(variable_speed=vs_var.get()),
+                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
+                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
+    tk.Label(trk, text="When on, sliders set the maximum speed.",
+             bg="#1e1e1e", fg="#666", font=("Helvetica", 9)).pack()
     make_slider_pair(trk, "Pan Speed", "pan_speed", "Tilt Speed", "tilt_speed", 1, 12, 1, is_int=True)
 
     section(trk, "── PERFORMANCE ──")
     make_slider(trk, "Process Every N Frames", "process_every_n", 1, 10, 1, is_int=True)
+    make_slider(trk, "Position Smoothing  (1.0 = raw, 0.1 = max smooth)",
+                "smooth_alpha", 0.1, 1.0, 0.05)
 
-    section(trk, "── TRACKING ──")
-    tvar = tk.BooleanVar(value=settings["tracking_on"])
-    tk.Checkbutton(trk, text="Tracking Enabled", variable=tvar,
-                   command=lambda: settings.update(tracking_on=tvar.get()),
-                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
-                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
-
-    status_var = tk.StringVar(value="Waiting for stream…")
-    tk.Label(trk, textvariable=status_var, bg="#1e1e1e", fg="#00cc44",
-             font=("Helvetica", 10), wraplength=240, justify=tk.LEFT).pack(pady=(4, 8))
 
     # ── Tab 2: Target ─────────────────────
     tgt = make_scrollable(tab_target)
 
     section(tgt, "── TARGET POSITION ──")
-    tk.Label(tgt, text="Click or drag on the video to move the target.",
+    tk.Label(tgt, text="Click or drag on the video to move the target.\n"
+                       "Vertical target per mode is set in the Framing tab.",
              bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
+             wraplength=380, justify=tk.LEFT).pack(pady=(4, 0))
 
-    target_x_var, target_y_var = make_slider_pair(
-        tgt, "Horizontal", "target_x", "Vertical", "target_y", -0.9, 0.9, 0.01)
+    target_x_var = make_slider(tgt, "Horizontal", "target_x", -0.9, 0.9, 0.01)
+
+    _mode_ty_vars = {}  # {"wide": DoubleVar, "close": DoubleVar} — filled in Framing tab
 
     def reset_target():
-        settings["target_x"] = 0.0
-        settings["target_y"] = 0.0
-        target_x_var.set(0.0)
-        target_y_var.set(0.0)
+        settings["target_x"]    = 0.0
+        settings["target_y_wide"]  = -0.4
+        settings["target_y_close"] = -0.2
+        target_x_var.set("0.000")
+        for k, v in _mode_ty_vars.items():
+            v.set(f"{settings[f'target_y_{k}']:.3f}")
 
     tk.Button(tgt, text="Reset to Centre", command=reset_target,
-              bg="#333", fg="#fff", font=("Helvetica", 10),
+              bg="#333", fg="#000", font=("Helvetica", 10),
               relief=tk.FLAT, padx=8, pady=4).pack(pady=(8, 0))
 
     section(tgt, "── TARGET PERSON ──")
@@ -338,15 +380,15 @@ def main():
              text="Click 'Capture' then click a person in the video to lock on.\n"
                   "Requires a live camera with a detected person.",
              bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
+             wraplength=380, justify=tk.LEFT).pack(pady=(4, 0))
 
-    thumb_label = tk.Label(tgt, bg="#2a2a2a", width=64, height=64,
+    thumb_label = tk.Label(tgt, bg="#2a2a2a", width=0, height=0,
                            relief=tk.FLAT)
     thumb_label.pack(pady=(6, 2))
 
     target_status_var = tk.StringVar(value="No target set — tracking largest person")
     tk.Label(tgt, textvariable=target_status_var, bg="#1e1e1e", fg="#aaaaaa",
-             font=("Helvetica", 9), wraplength=240, justify=tk.LEFT).pack()
+             font=("Helvetica", 9), wraplength=380, justify=tk.LEFT).pack()
 
     btn_row = tk.Frame(tgt, bg="#1e1e1e")
     btn_row.pack(pady=(6, 8))
@@ -356,52 +398,62 @@ def main():
         target_status_var.set("Click a person in the video…")
 
     def do_clear_target():
-        reference_hist[0] = None
-        thumb_photo[0]    = None
-        thumb_label.config(image="", width=64, height=64)
-        capture_mode[0]   = False
+        reference_track_id[0] = None
+        smooth_box[0]         = None
+        thumb_photo[0]        = None
+        thumb_label.config(image="", width=0, height=0)
+        capture_mode[0]       = False
         target_status_var.set("No target set — tracking largest person")
         log.info("Target person cleared")
 
     tk.Button(btn_row, text="Capture Target", command=do_capture_target,
-              bg="#1a5c1a", fg="#fff", font=("Helvetica", 10),
+              bg="#1a5c1a", fg="#000", font=("Helvetica", 10),
               relief=tk.FLAT, padx=8, pady=4).pack(side=tk.LEFT, padx=4)
     tk.Button(btn_row, text="Clear", command=do_clear_target,
-              bg="#5c1a1a", fg="#fff", font=("Helvetica", 10),
+              bg="#5c1a1a", fg="#000", font=("Helvetica", 10),
               relief=tk.FLAT, padx=8, pady=4).pack(side=tk.LEFT, padx=4)
 
     # ── Tab 3: Framing ────────────────────
     frm_ = make_scrollable(tab_framing)
 
-    section(frm_, "── ZOOM FRAMING ──")
+    section(frm_, "── VERTICAL TARGET ──")
     tk.Label(frm_,
-             text="Auto-adjusts vertical framing based on how large\n"
-                  "the person appears (proxy for zoom level).",
+             text="Set where in the frame the target point sits.\n"
+                  "Close-up is detected when the head (top of\n"
+                  "bounding box) is near the top of the frame.",
              bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
-             wraplength=240, justify=tk.LEFT).pack(pady=(4, 0))
+             wraplength=380, justify=tk.LEFT).pack(pady=(4, 0))
 
-    framing_var = tk.BooleanVar(value=settings["framing_on"])
-    tk.Checkbutton(frm_, text="Zoom Framing Enabled", variable=framing_var,
-                   command=lambda: settings.update(framing_on=framing_var.get()),
-                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
-                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
+    ty_w_var, ty_c_var = make_slider_pair(
+        frm_, "Wide Y", "target_y_wide", "Close-up Y", "target_y_close", -0.9, 0.9, 0.01)
+    _mode_ty_vars["wide"]  = ty_w_var
+    _mode_ty_vars["close"] = ty_c_var
 
-    make_slider_pair(frm_, "Wide Shot  Y", "framing_wide_y", "Close-up  Y", "framing_close_y", -0.9, 0.9, 0.01)
-    make_slider(frm_, "Switch Threshold  (% frame height)", "framing_threshold", 5, 80, 1, is_int=True)
-
-    zoom_mode_var = tk.StringVar(value="—")
+    zoom_mode_var = tk.StringVar(value="Wide")
     framing_row = tk.Frame(frm_, bg="#1e1e1e")
     framing_row.pack(pady=(4, 0))
-    tk.Label(framing_row, text="Current:", bg="#1e1e1e", fg="#888",
+    tk.Label(framing_row, text="Current mode:", bg="#1e1e1e", fg="#888",
              font=("Helvetica", 9)).pack(side=tk.LEFT)
     tk.Label(framing_row, textvariable=zoom_mode_var, bg="#1e1e1e", fg="#ffcc44",
              font=("Helvetica", 9, "bold")).pack(side=tk.LEFT, padx=(4, 0))
+
+    section(frm_, "── AUTO ZOOM-OUT ──")
+    tk.Label(frm_, text="Zoom out when subject is lost.\nStops automatically when subject is reacquired.",
+             bg="#1e1e1e", fg="#666", font=("Helvetica", 9),
+             wraplength=380, justify=tk.LEFT).pack(pady=(4, 0))
+    az_var = tk.BooleanVar(value=settings["auto_zoom_out"])
+    tk.Checkbutton(frm_, text="Auto Zoom-out Enabled", variable=az_var,
+                   command=lambda: settings.update(auto_zoom_out=az_var.get()),
+                   bg="#1e1e1e", fg="#fff", selectcolor="#333",
+                   font=("Helvetica", 11), activebackground="#1e1e1e").pack(pady=(6, 0))
+    make_slider(frm_, "Zoom-out Speed", "zoom_out_speed", 1, 12, 1, is_int=True)
+    make_slider(frm_, "Delay  (missed frames)", "zoom_out_delay", 1, 60, 1, is_int=True)
 
     # ── Tab 4: Settings ───────────────────
     stg = make_scrollable(tab_settings)
 
     save_btn = tk.Button(stg, text="Save as Default",
-                         bg="#1a3c5c", fg="#fff", font=("Helvetica", 10),
+                         bg="#1a3c5c", fg="#000", font=("Helvetica", 10),
                          relief=tk.FLAT, padx=8, pady=4)
     save_btn.pack(pady=(24, 4))
     save_status_var = tk.StringVar(value="")
@@ -417,15 +469,81 @@ def main():
 
     save_btn.config(command=do_save_settings)
 
+    # ── Tab 5: Controls ───────────────────
+    tk.Label(tab_controls, text="MANUAL CONTROLS", bg="#1e1e1e", fg="#fff",
+             font=("Helvetica", 12, "bold")).pack(pady=(16, 4))
+    tk.Label(tab_controls, text="Hold to move  •  Release to stop",
+             bg="#1e1e1e", fg="#666", font=("Helvetica", 9)).pack(pady=(0, 12))
+
+    _db = dict(font=("Helvetica", 16), relief=tk.FLAT,
+               activebackground="#555", cursor="hand2", width=3, height=1,
+               fg="#000000")
+
+    def _manual_press(cmd):
+        manual_override[0] = True
+        move(cmd)
+
+    def _manual_release():
+        move("stop")
+        manual_override[0] = False
+
+    def _dpad_btn(parent, text, cmd, row, col):
+        b = tk.Button(parent, text=text, bg="#333", **_db)
+        b.grid(row=row, column=col, padx=3, pady=3)
+        b.bind("<ButtonPress-1>",   lambda e, c=cmd: _manual_press(c))
+        b.bind("<ButtonRelease-1>", lambda e: _manual_release())
+
+    dpad = tk.Frame(tab_controls, bg="#1e1e1e")
+    dpad.pack()
+
+    _dpad_btn(dpad, "↖", "upleft",    0, 0)
+    _dpad_btn(dpad, "↑", "up",        0, 1)
+    _dpad_btn(dpad, "↗", "upright",   0, 2)
+    _dpad_btn(dpad, "←", "left",      1, 0)
+    stop_b = tk.Button(dpad, text="■", bg="#4a1a1a", **_db)
+    stop_b.grid(row=1, column=1, padx=3, pady=3)
+    stop_b.bind("<ButtonPress-1>", lambda e: _manual_press("stop"))
+    _dpad_btn(dpad, "→", "right",     1, 2)
+    _dpad_btn(dpad, "↙", "downleft",  2, 0)
+    _dpad_btn(dpad, "↓", "down",      2, 1)
+    _dpad_btn(dpad, "↘", "downright", 2, 2)
+
+    zoom_row = tk.Frame(tab_controls, bg="#1e1e1e")
+    zoom_row.pack(pady=(16, 0))
+
+    _zb = dict(font=("Helvetica", 11), relief=tk.FLAT,
+               activebackground="#555", cursor="hand2", padx=14, pady=8)
+
+    zin_b  = tk.Button(zoom_row, text="＋  Zoom In",  bg="#1a3c1a", fg="#000000", **_zb)
+    zout_b = tk.Button(zoom_row, text="－  Zoom Out", bg="#3c1a1a", fg="#000000", **_zb)
+    zin_b .pack(side=tk.LEFT, padx=6)
+    zout_b.pack(side=tk.LEFT, padx=6)
+    zin_b .bind("<ButtonPress-1>",   lambda e: zoom("in"))
+    zin_b .bind("<ButtonRelease-1>", lambda e: zoom("stop"))
+    zout_b.bind("<ButtonPress-1>",   lambda e: zoom("out"))
+    zout_b.bind("<ButtonRelease-1>", lambda e: zoom("stop"))
+
     # ── Canvas mouse: capture mode → select person; normal → move target ──
     def set_target_from_mouse(event):
+        # Scale canvas click coords → native frame coords
+        cw = canvas.winfo_width()  or fw
+        ch = canvas.winfo_height() or fh
+        mx = event.x * fw / cw
+        my = event.y * fh / ch
+
+        # Click on tracking indicator (top-left region) → toggle
+        if mx < 200 and my < 45:
+            _toggle_tracking()
+            return
+
         if capture_mode[0]:
             # Find the bounding box the user clicked inside
-            for (x1, y1, x2, y2) in last_boxes[0]:
-                if x1 <= event.x <= x2 and y1 <= event.y <= y2:
+            for (x1, y1, x2, y2, tid) in last_boxes[0]:
+                if x1 <= mx <= x2 and y1 <= my <= y2:
+                    reference_track_id[0] = tid
+                    smooth_box[0] = None   # reset smoothing for new target
                     if frame_hold[0] is not None:
                         crop = frame_hold[0][int(y1):int(y2), int(x1):int(x2)]
-                        reference_hist[0] = compute_hist(crop)
                         # Build portrait thumbnail (60×90 px)
                         if crop.size > 0:
                             th_bgr = cv2.resize(crop, (60, 90))
@@ -433,26 +551,30 @@ def main():
                             img = ImageTk.PhotoImage(Image.fromarray(th_rgb))
                             thumb_photo[0] = img
                             thumb_label.config(image=img, width=60, height=90)
-                        target_status_var.set("Target locked ✓")
-                        log.info("Target person captured from click at (%d,%d)",
-                                 event.x, event.y)
+                        target_status_var.set(f"Target locked ✓  (ID {tid})")
+                        log.info("Target locked: track ID %d at (%d,%d)", tid,
+                                 mx, my)
                     capture_mode[0] = False
                     return
             # Click missed every box — cancel without changing reference
             capture_mode[0] = False
-            target_status_var.set("Target locked ✓" if reference_hist[0] is not None
-                                  else "No target set — tracking largest person")
+            target_status_var.set(
+                f"Target locked ✓  (ID {reference_track_id[0]})"
+                if reference_track_id[0] is not None
+                else "No target set — tracking largest person")
             return
 
         # Normal behaviour: move tracking target position
-        nx = (event.x - fw / 2) / (fw / 2)
-        ny = (event.y - fh / 2) / (fh / 2)
+        nx = (mx - fw / 2) / (fw / 2)
+        ny = (my - fh / 2) / (fh / 2)
         nx = max(-0.9, min(0.9, nx))
         ny = max(-0.9, min(0.9, ny))
         settings["target_x"] = round(nx, 3)
-        settings["target_y"] = round(ny, 3)
-        target_x_var.set(nx)
-        target_y_var.set(ny)
+        settings[f"target_y_{zoom_mode[0]}"] = round(ny, 3)
+        target_x_var.set(f"{nx:.3f}")
+        v = _mode_ty_vars.get(zoom_mode[0])
+        if v is not None:
+            v.set(f"{ny:.3f}")
 
     canvas.bind("<Button-1>",  set_target_from_mouse)
     canvas.bind("<B1-Motion>", lambda e: set_target_from_mouse(e)
@@ -463,12 +585,18 @@ def main():
     frame_num     = [0]
     photo_hold    = [None]
     # ── Person-lock state ─────────────────
-    reference_hist = [None]   # HSV histogram of the locked target
-    frame_hold     = [None]   # Latest BGR frame (for click-to-capture)
-    last_boxes     = [[]]     # Latest detected bounding boxes
+    reference_track_id = [None]  # ByteTrack ID of the locked target
+    smooth_box         = [None]  # EMA-smoothed (x1,y1,x2,y2) of tracked person
+    frame_hold         = [None]  # Latest BGR frame (for click-to-capture)
+    last_boxes         = [[]]    # Latest track boxes: (x1,y1,x2,y2,tid)
     capture_mode   = [False]  # True while waiting for user to click a person
     thumb_photo    = [None]   # Keep thumbnail PhotoImage alive
-    zoom_mode      = ["wide"] # current framing mode: "wide" or "close"
+    zoom_mode           = ["wide"]  # current framing mode: "wide" or "close"
+    lost_subject_frames = [0]
+    manual_override     = [False]  # True while a manual control button is held
+    last_pan_speed      = [None]
+    last_tilt_speed     = [None]
+    zooming_out         = [False]
 
     def update():
         try:
@@ -481,52 +609,83 @@ def main():
             frame_hold[0] = frame.copy()   # keep for click-to-capture
 
             tx = fw / 2 + settings["target_x"] * (fw / 2)
-            ty = fh / 2 + settings["target_y"] * (fh / 2)
+            ty = fh / 2 + settings[f"target_y_{zoom_mode[0]}"] * (fh / 2)
 
             frame_num[0] += 1
-            if frame_num[0] % settings["process_every_n"] == 0:
+            if manual_override[0]:
+                status_var.set("Manual control")
+            elif frame_num[0] % settings["process_every_n"] == 0:
                 try:
-                    results    = model(frame, verbose=False, classes=[0])
-                    last_boxes[0] = get_all_persons(results)
-                    person_box = find_target_person(results, frame, reference_hist[0])
+                    results       = model.track(frame, verbose=False, classes=[0],
+                                                persist=True)
+                    track_boxes   = get_track_boxes(results)
+                    last_boxes[0] = track_boxes
+                    raw_box       = find_tracked_person(track_boxes, reference_track_id[0])
                 except Exception:
-                    log.exception("YOLO inference error on frame %d", frame_num[0])
+                    log.exception("YOLO/tracker error on frame %d", frame_num[0])
+                    raw_box = None
+
+                # EMA position smoothing
+                if raw_box:
+                    if smooth_box[0] is None:
+                        smooth_box[0] = list(raw_box)
+                    else:
+                        a = settings["smooth_alpha"]
+                        smooth_box[0] = [a * n + (1 - a) * s
+                                         for n, s in zip(raw_box, smooth_box[0])]
+                    person_box = tuple(smooth_box[0])
+                else:
+                    smooth_box[0] = None
                     person_box = None
 
-                # ── Zoom-aware framing: override ty based on box size ──
-                if settings["framing_on"] and person_box:
+                # ── Detect wide vs close-up using head (box top) position ──
+                # If the head is within 12% of frame top → close-up; above 18% → wide
+                if person_box:
                     bx1, by1, bx2, by2 = person_box
-                    box_frac = (by2 - by1) / fh          # 0–1 height fraction
-                    thr      = settings["framing_threshold"] / 100.0
-                    hyster   = 0.04                       # ±4 % hysteresis band
-                    if zoom_mode[0] == "wide"  and box_frac > thr + hyster:
+                    head_frac = by1 / fh               # 0 = top of frame, 1 = bottom
+                    if zoom_mode[0] == "wide"  and head_frac < 0.12:
                         zoom_mode[0] = "close"
-                        log.debug("Framing → close-up  (box %.0f%%)", box_frac * 100)
-                    elif zoom_mode[0] == "close" and box_frac < thr - hyster:
+                        log.debug("Mode → close-up  (head at %.0f%%)", head_frac * 100)
+                    elif zoom_mode[0] == "close" and head_frac > 0.18:
                         zoom_mode[0] = "wide"
-                        log.debug("Framing → wide  (box %.0f%%)", box_frac * 100)
-                    eff_y = (settings["framing_close_y"] if zoom_mode[0] == "close"
-                             else settings["framing_wide_y"])
-                    ty = fh / 2 + eff_y * (fh / 2)
+                        log.debug("Mode → wide  (head at %.0f%%)", head_frac * 100)
                     zoom_mode_var.set(
-                        f"Close-up  ({box_frac*100:.0f}%)" if zoom_mode[0] == "close"
-                        else f"Wide  ({box_frac*100:.0f}%)"
+                        f"Close-up  (head {head_frac*100:.0f}%)" if zoom_mode[0] == "close"
+                        else f"Wide  (head {head_frac*100:.0f}%)"
                     )
-                elif not settings["framing_on"]:
-                    zoom_mode_var.set("—")
+                else:
+                    zoom_mode_var.set(zoom_mode[0].capitalize())
 
                 if person_box and settings["tracking_on"]:
+                    # Subject found — reset zoom-out state
+                    if zooming_out[0]:
+                        zoom("stop")
+                        zooming_out[0] = False
+                        log.info("Auto zoom-out stopped — subject reacquired")
+                    lost_subject_frames[0] = 0
                     x1, y1, x2, y2 = person_box
                     sx = (x1 + x2) / 2
                     # Track the head: ~8% down from the top of the bounding box
                     sy = y1 + (y2 - y1) * 0.08
                     ox = (sx - tx) / (fw / 2)
                     oy = (sy - ty) / (fh / 2)
-                    d  = get_direction(ox, oy)
-                    if d != last_dir[0]:
-                        log.debug("Direction change: %s → %s", last_dir[0], d)
-                        move(d)
-                        last_dir[0] = d
+                    suffix = "close" if zoom_mode[0] == "close" else "wide"
+                    dz_x = settings[f"deadzone_x_{suffix}"]
+                    dz_y = settings[f"deadzone_y_{suffix}"]
+                    d = get_direction(ox, oy, dz_x, dz_y)
+                    if settings["variable_speed"]:
+                        c_pan  = compute_speed(ox, dz_x, settings["pan_speed"])
+                        c_tilt = compute_speed(oy, dz_y, settings["tilt_speed"])
+                    else:
+                        c_pan, c_tilt = settings["pan_speed"], settings["tilt_speed"]
+                    if (d != last_dir[0] or c_pan != last_pan_speed[0]
+                            or c_tilt != last_tilt_speed[0]):
+                        if d != last_dir[0]:
+                            log.debug("Direction change: %s → %s", last_dir[0], d)
+                        move(d, pan=c_pan, tilt=c_tilt)
+                        last_dir[0]       = d
+                        last_pan_speed[0]  = c_pan
+                        last_tilt_speed[0] = c_tilt
                     cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
                     # Draw dot on the tracked head point
                     cv2.circle(frame, (int(sx), int(sy)), 6, (0, 255, 255), -1)
@@ -535,12 +694,30 @@ def main():
                     if last_dir[0] != "stop":
                         move("stop")
                         last_dir[0] = "stop"
-                    status_var.set("Tracking OFF" if not settings["tracking_on"]
-                                   else "No subject detected")
+                    if settings["tracking_on"] and settings["auto_zoom_out"]:
+                        lost_subject_frames[0] += 1
+                        delay = settings["zoom_out_delay"]
+                        if lost_subject_frames[0] >= delay and not zooming_out[0]:
+                            zoom("out")
+                            zooming_out[0] = True
+                            log.info("Auto zoom-out triggered after %d missed frames",
+                                     lost_subject_frames[0])
+                        if zooming_out[0]:
+                            status_var.set("Zooming out…")
+                        else:
+                            remaining = delay - lost_subject_frames[0]
+                            status_var.set(f"No subject — zoom-out in {remaining}…")
+                    else:
+                        if zooming_out[0]:
+                            zoom("stop")
+                            zooming_out[0] = False
+                        lost_subject_frames[0] = 0
+                        status_var.set("Tracking OFF" if not settings["tracking_on"]
+                                       else "No subject detected")
 
             # ── Capture-mode overlay: highlight all detected persons ──
             if capture_mode[0]:
-                for (x1, y1, x2, y2) in last_boxes[0]:
+                for (x1, y1, x2, y2, _tid) in last_boxes[0]:
                     cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)),
                                   (0, 140, 255), 3)
                 cv2.putText(frame, "Click a person to track",
@@ -548,8 +725,9 @@ def main():
                             (0, 140, 255), 2, cv2.LINE_AA)
 
             # Deadzone box centred on the moveable target
-            dzx = int(fw / 2 * settings["deadzone_x"])
-            dzy = int(fh / 2 * settings["deadzone_y"])
+            _sfx = "close" if zoom_mode[0] == "close" else "wide"
+            dzx = int(fw / 2 * settings[f"deadzone_x_{_sfx}"])
+            dzy = int(fh / 2 * settings[f"deadzone_y_{_sfx}"])
             cv2.rectangle(frame,
                           (int(tx) - dzx, int(ty) - dzy),
                           (int(tx) + dzx, int(ty) + dzy),
@@ -561,17 +739,34 @@ def main():
             cv2.line(frame, (int(tx), int(ty) - arm), (int(tx), int(ty) + arm), (0, 220, 220), 2)
             cv2.circle(frame, (int(tx), int(ty)), 4, (0, 220, 220), -1)
 
+            # Tracking indicator (top-left) — click to toggle
+            trk_label = "● TRACKING ON" if settings["tracking_on"] else "○ TRACKING OFF"
+            trk_color  = (0, 220, 80)   if settings["tracking_on"] else (80, 80, 220)
+            cv2.putText(frame, trk_label, (10, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, trk_color, 2, cv2.LINE_AA)
+
+            # Wide/close-up badge (top-right) — always visible
+            badge_label = "CLOSE-UP" if zoom_mode[0] == "close" else "WIDE"
+            badge_color = (0, 140, 255) if zoom_mode[0] == "close" else (160, 80, 0)
+            (tw, th), _ = cv2.getTextSize(badge_label, cv2.FONT_HERSHEY_SIMPLEX, 0.55, 2)
+            pad = 6
+            bx1, by1 = fw - tw - pad * 2 - 10, 10
+            bx2, by2 = fw - 10, by1 + th + pad * 2
+            cv2.rectangle(frame, (bx1, by1), (bx2, by2), badge_color, -1)
+            cv2.putText(frame, badge_label, (bx1 + pad, by2 - pad),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 2, cv2.LINE_AA)
+
             # HUD
-            framing_hud = (f"  FRAMING:{zoom_mode[0].upper()}"
-                           if settings["framing_on"] else "")
             cv2.putText(frame,
-                        f"DZ {settings['deadzone_x']:.2f}/{settings['deadzone_y']:.2f}  "
+                        f"DZ {settings[f'deadzone_x_{_sfx}']:.2f}/{settings[f'deadzone_y_{_sfx}']:.2f}  "
                         f"SPD {settings['pan_speed']}/{settings['tilt_speed']}  "
-                        f"TGT {settings['target_x']:+.2f},{settings['target_y']:+.2f}"
-                        f"{framing_hud}",
+                        f"TGT {settings['target_x']:+.2f},{settings[f'target_y_{_sfx}']:+.2f}",
                         (10, fh - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
 
-            rgb   = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            cw = canvas.winfo_width()
+            ch = canvas.winfo_height()
+            display = cv2.resize(frame, (cw, ch)) if cw > 1 and ch > 1 else frame
+            rgb   = cv2.cvtColor(display, cv2.COLOR_BGR2RGB)
             photo = ImageTk.PhotoImage(Image.fromarray(rgb))
             canvas.create_image(0, 0, anchor=tk.NW, image=photo)
             photo_hold[0] = photo
@@ -586,13 +781,12 @@ def main():
 
     def on_close():
         log.info("Shutting down — stop command sent to camera")
+        save_settings()
         move("stop")
         cap.release()
         root.destroy()
 
-    # Closing either window shuts everything down
     root.protocol("WM_DELETE_WINDOW", on_close)
-    ctrl.protocol("WM_DELETE_WINDOW", on_close)
 
     root.after(0, update)
     try:

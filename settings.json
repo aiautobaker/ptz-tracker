@@ -1,0 +1,18 @@
+{
+  "deadzone_x_wide": 0.4,
+  "deadzone_y_wide": 0.2,
+  "deadzone_x_close": 0.2,
+  "deadzone_y_close": 0.2,
+  "pan_speed": 8,
+  "tilt_speed": 1,
+  "variable_speed": true,
+  "smooth_alpha": 0.5,
+  "process_every_n": 3,
+  "tracking_on": true,
+  "target_x": 0.0,
+  "target_y_wide": -0.4,
+  "target_y_close": -0.4,
+  "auto_zoom_out": false,
+  "zoom_out_speed": 3,
+  "zoom_out_delay": 15
+}
