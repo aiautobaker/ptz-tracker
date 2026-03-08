@@ -1,2 +1,10 @@
 #!/bin/bash
-exec "/Users/freedommedia/Documents/GitHub/ptz-tracker/venv/bin/python3" "/Users/freedommedia/Documents/GitHub/ptz-tracker/tracker.py"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../.." >/dev/null 2>&1 && pwd )"
+cd "$DIR"
+
+if [ ! -d "venv" ]; then
+    osascript -e 'display alert "Virtual environment not found! Please run PTZ Tracker.command first, or manually create the venv."'
+    exit 1
+fi
+
+exec "$DIR/venv/bin/python3" tracker.py
