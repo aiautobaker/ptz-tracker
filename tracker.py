@@ -680,7 +680,7 @@ def main():
 
     # Second Camera
     cam2 = CameraController(
-        camera_ip="192.168.200.127", 
+        camera_ip="192.168.200.243", 
         camera_name="Camera 2 - Rear",
         parent_frame=frame_cam2,
         config_key="cam2",
