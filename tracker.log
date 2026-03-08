@@ -9216,3 +9216,10 @@ ModuleNotFoundError: No module named 'lap'
 2026-03-08 11:14:23,990  DEBUG     Starting new HTTP connection (1): 192.168.200.214:80
 2026-03-08 11:14:24,010  DEBUG     http://192.168.200.214:80 "GET /cgi-bin/ptzctrl.cgi?ptzcmd&ptzstop&0&0 HTTP/1.1" 200 33
 2026-03-08 11:14:24,028  INFO      ─── PTZ Tracker stopped ───
+2026-03-08 11:31:11,112  INFO      ─── PTZ Tracker Unified Dashboard Starting ───
+2026-03-08 11:31:11,524  INFO      [Camera 1 - Front] Loading YOLO model...
+2026-03-08 11:31:11,540  INFO      [Camera 1 - Front] Connecting to rtsp://192.168.200.214:554/2
+2026-03-08 11:31:41,584  ERROR     [Camera 1 - Front] Could not open RTSP stream.
+2026-03-08 11:31:41,585  INFO      [Camera 1 - Front] Stream: 1280x720
+2026-03-08 11:31:41,614  INFO      [Camera 2 - Rear] Loading YOLO model...
+2026-03-08 11:31:41,635  INFO      [Camera 2 - Rear] Connecting to rtsp://192.168.200.243:554/2
